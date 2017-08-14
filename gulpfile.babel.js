@@ -47,8 +47,9 @@ import childProcess from 'child_process'
         })
     })
 
-    gulp.task('deploy', ['clean'], () => {
-        gulp.start('build')
+
+    gulp.task('deploy', ['build'], () => {
+        gulp.start('clean')
     })
 
 })()
