@@ -1,0 +1,51 @@
+@import "mixin";
+
+// maybe change flex to float(for browser compatibility)
+/* @media(min-width: 768px) {
+  div.cube-content {
+    margin-left: 300px;
+    @include clearFix;
+  }
+  div.cube-left {
+    float: left;
+  }
+
+  div.cube-right {
+    float: left;
+  }
+}
+
+@media(max-width: 768px) {
+  div.cube-right {
+    display: none;
+  }
+} */
+
+@media(min-width: 768px) {
+  div.cube-content {
+    margin-left: 200px;
+    @media(max-width: 1120px) and (min-width: 768px) {
+      margin-left: 20%;
+      margin-right: 25px;
+    }
+    margin-right: 50px;
+    margin-top: 25px;
+    display: flex;
+    visibility: hidden;
+    justify-content: space-between;
+  }
+  div.cube-left {
+    flex: 0 1 70%;
+    max-width: 70%;
+  }
+  div.cube-right {
+    flex: 0 1 28%;
+    max-width: 28%;
+  }
+}
+
+@media(max-width: 768px) {
+  div.cube-right {
+    display: none;
+  }
+}

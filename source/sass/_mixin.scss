@@ -1,0 +1,58 @@
+@import "variable";
+
+@mixin clearFix {
+  &:before, &:after {
+    content: ' ';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin typed($top: 150px, $fontSize: $basic-font-size) {
+  div.cube-type {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    top: $top;
+    font-size: $fontSize;
+    visibility: hidden;
+    span {
+      font-size: 2em;
+      text-shadow: 0 1px 10px #47456d;
+    }
+  }
+
+  span.cube-typed-cursor {
+    color: $basic-font-color;
+    margin-left: -10px;
+    animation: typed-cursor .8s infinite;
+    -moz-animation: typed-cursor .8s infinite;
+    -webkit-animation: typed-cursor .8s infinite;
+    -o-animation: typed-cursor .8s infinite;
+  }
+
+  span.cube-typed-title {
+    color: $basic-font-color;
+  }
+}
+
+@mixin link($color: $basic-black-font-color, $visited-color: $basic-black-font-color, $hover-color: $basic-link-color) {
+  color: $color;
+  text-decoration: none;
+  &:visited {
+    color: $visited-color;
+  }
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+@mixin block-shadow {
+  box-shadow:
+          0 2px 2px 0 rgba(0,0,0,.14),
+          0 3px 1px -2px rgba(0,0,0,.2),
+          0 1px 5px 0 rgba(0,0,0,.12);
+}

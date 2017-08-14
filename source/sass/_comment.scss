@@ -1,0 +1,44 @@
+@import "mixin";
+
+@media(max-width: 768px) {
+  div.changyan-container {
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  div.youyan-container {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  div.gitment-comment {
+    padding: 20px;
+    margin-top: 20px;
+  }
+}
+
+@media(min-width: 768px) {
+  div.changyan-container {
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 5px;
+    @include block-shadow;
+    background-color: #fff;
+  }
+
+  div.youyan-container {
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 40px;
+    border-radius: 5px;
+    @include block-shadow;
+  }
+
+  div.gitment-comment {
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 40px;
+    border-radius: 5px;
+    @include block-shadow;
+  }
+}

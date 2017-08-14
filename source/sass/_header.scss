@@ -1,0 +1,74 @@
+@import "variable";
+@import "mixin";
+
+header.cube-header {
+  @media(max-width: 768px) {
+    width:100%;
+    height: 300px!important;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    @include typed();
+  }
+  @media(min-width: 768px) {
+    display: none;
+  }
+}
+
+header.cube-background {
+  @media(max-width: 768px) {
+    display: none;
+  }
+}
+
+header.cube-header-background {
+  margin-top: 44px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+  @include typed(150px, 28px);
+}
+
+div.load-header-background {
+  @media(min-width: 768px) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 64px;
+    width: 64px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -32px;
+    margin-left: -32px;
+    background-image: url('/images/loading.png');
+    animation: loading .8s infinite linear;
+  }
+  @media(max-width: 768px) {
+    display: none;
+  }
+}
+
+@keyframes loading {
+  from {
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+header.cube-full-background {
+
+}
+
+
+
+@keyframes typed-cursor {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

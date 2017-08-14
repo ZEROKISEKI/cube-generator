@@ -1,0 +1,22 @@
+<%- partial('_partial/head') %>
+<body>
+<div class="cube-body">
+    <%- partial('_partial/menu') %>
+    <%- partial('_partial/header') %>
+    <div class="cube-content">
+        <div class="cube-left">
+            <%- body %>
+        </div>
+        <div class="cube-right">
+            <%- partial('_partial/sidebar') %>
+        </div>
+    </div>
+</div>
+<footer class="cube-footer">
+    <%- partial('_partial/footer') %>
+</footer>
+<!-- inject:script -->
+<!-- endinject -->
+<div class="cube-loading out"></div>
+</body>
+</html>

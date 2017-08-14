@@ -1,0 +1,93 @@
+@import "variable";
+@import "font-awesome/font-awesome";
+@import "lightgallery/lightgallery.scss";
+
+// TODO 设置不同width的font-size
+body {
+  margin: 0;
+  padding: 0;
+  font: $basic-font-size "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+  @media(max-width: 768px) {
+    background-color: $mobile-body-background-color;
+  }
+  @media(min-width: 768px) {
+    background-color: $body-background-color;
+    overflow: hidden;
+  }
+}
+
+.cube-footer {
+  width: 100%;
+  text-align: center;
+  @media(min-width: 768px) {
+    padding: 30px 0 20px 0;
+    margin-top: 100px;
+  }
+  @media(max-width: 768px) {
+    padding: 20px 0 10px 0;
+    margin-top: 10px;
+  }
+  font-size: 0.9em;
+  color: $basic-black-font-color;
+  a {
+    text-decoration: none;
+    color: $basic-link-color;
+    &:hover {
+      color: $basic-link-hover-color;
+    }
+    &:visited {
+      text-decoration: none;
+      color: $basic-link-color;
+    }
+  }
+}
+
+
+//增加图标(继承自font-awesome)
+.cube-icon {
+  @extend .fa;
+}
+
+.cube-icon-tag {
+  @extend .fa-tags;
+}
+
+.cube-icon-date {
+  @extend .fa-calendar;
+}
+
+.cube-icon-home {
+  @extend .fa-home;
+}
+
+.cube-icon-archive {
+  @extend .fa-archive;
+}
+
+.cube-icon-tags {
+  @extend .fa-tags;
+}
+
+.cube-icon-categories {
+  @extend .fa-paperclip;
+}
+
+.cube-icon-about {
+  @extend .fa-user;
+}
+
+.cube-icon-search {
+  @extend .fa-search;
+}
+
+.cube-prev {
+  @extend .fa-angle-double-left;
+}
+
+.cube-next {
+  @extend .fa-angle-double-right;
+}
+
+.cube-close {
+  @extend .fa-times;
+}

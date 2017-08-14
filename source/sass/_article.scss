@@ -1,0 +1,295 @@
+@import "variable";
+@import "markdown";
+@import "mixin";
+
+.cube-markdown {
+  color: $basic-black-font-color;
+  @include markdown-config;
+}
+
+// 文章摘要
+div.cube-excerpt {
+  .cube-excerpt-header {
+    h1 {
+      font-weight: 600;
+      margin-top: 0;
+      text-align: center;
+      a {
+        color: $title-font-color;
+        text-decoration: none;
+        &:visited {
+          color: $title-font-color;
+          text-decoration: none;
+        }
+      }
+    }
+    .cube-excerpt-header-msg {
+      display: flex;
+      text-align: center;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .cube-excerpt-date {
+      flex: 1 1 50%;
+      text-align: right;
+      color: $title-font-color;
+    }
+
+    .cube-excerpt-tags {
+      flex: 1 1 50%;
+      max-width: 50%;
+      text-align: left;
+      overflow: hidden;
+      padding-left: 15px;
+      word-break: break-all;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      a {
+        padding-right: 2px;
+        text-decoration: none;
+        &:visited {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  div.cube-excerpt {
+    margin-bottom: 30px;
+    background-color: $basic-body-background-color;
+    .cube-excerpt-header {
+      padding: 20px 20px 0 20px;
+      h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      .cube-excerpt-header-msg {
+        .cube-excerpt-tags a {
+          color: $title-font-color;
+          &:visited {
+            color: $title-font-color;
+          }
+        }
+      }
+    }
+    .cube-excerpt-entry {
+      padding: 0 20px;
+    }
+    .cube-excerpt-footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 0 20px 20px 20px;
+      a {
+        text-decoration: none;
+        color: $link-color;
+        background-color: $link-background-color;
+        padding: 5px 20px;
+        font-size: 15px;
+        line-height: 32px;
+        height: 32px;
+        border-radius: 20px;
+        &:visited {
+          text-decoration: none;
+          color: $link-color;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  div.cube-excerpt {
+    background: #fff;
+    padding: 10px;
+    margin-top: 40px;
+    border-radius: 5px;
+    @include block-shadow;
+    &:first-child {
+      margin-top: 0;
+    }
+    .cube-excerpt-header {
+      padding: 20px 20px 0 20px;
+      h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+      }
+
+      .cube-excerpt-header-msg {
+        .cube-excerpt-tags a {
+          color: $title-font-color;
+          &:visited {
+            color: $title-font-color;
+          }
+        }
+      }
+    }
+    .cube-excerpt-entry {
+      padding: 0 20px;
+    }
+    .cube-excerpt-footer {
+      padding: 0 20px 20px 20px;
+      text-align: center;
+      margin-top: 20px;
+      a {
+        text-decoration: none;
+        color: $basic-black-font-color;
+        background-color: $mobile-body-background-color;
+        line-height: 32px;
+        font-size: 1.1em;
+        padding: 5px 20px;
+        border-radius: 20px;
+        height: 32px;
+        &:hover {
+          text-decoration: none;
+          color: $link-color;
+          background-color: $link-background-color;
+        }
+        &:visited {
+          text-decoration: none;
+          color: $basic-black-font-color;
+        }
+      }
+    }
+  }
+}
+
+// 完整文章
+div.cube-article {
+  border-radius: 5px;
+  @include block-shadow;
+  background-color: #fff;
+
+  h1.title {
+    font-weight: 600;
+    margin-top: 0;
+    text-align: center;
+    color: $title-font-color;
+    border-bottom: 0;
+  }
+
+  .cube-article-header {
+    display: flex;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .cube-article-date {
+    flex: 1;
+    text-align: right;
+    color: $title-font-color;
+    &.page {
+      text-align: center;
+    }
+  }
+
+  .cube-article-tags {
+    flex: 1;
+    padding-left: 15px;
+    text-align: left;
+    a {
+      text-decoration: none;
+      &:visited {
+        text-decoration: none;
+      }
+    }
+  }
+
+  @media(max-width: 768px) {
+    h1.title {
+      padding: 20px 20px 0 20px;
+      font-size: 1.7em;
+    }
+
+    .cube-article-header {
+      padding: 0 20px;
+    }
+
+    .cube-article-content {
+      padding: 0 20px 20px 20px;
+    }
+  }
+
+  @media(min-width: 768px) {
+    padding: 10px;
+    h1.title {
+      padding: 20px 20px 0 20px;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .cube-article-header {
+      padding: 0 20px;
+      .cube-article-tags a {
+        color: $title-font-color;
+        &:visited {
+          color: $title-font-color;
+        }
+      }
+    }
+
+    .cube-article-content {
+      padding: 0 20px 20px 20px;
+    }
+  }
+}
+
+div.cube-article-nav {
+
+  @media(max-width: 768px) {
+    ul {
+      list-style: none;
+      padding-left: 0;
+      width: 100%;
+      li {
+        width: 100%;
+        text-align: center;
+        a {
+          text-decoration: none;
+          @include link($hover-color: $basic-black-font-color);
+        }
+      }
+    }
+  }
+
+  @media(min-width: 768px) {
+    ul {
+      list-style: none;
+      padding-left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      li {
+        flex: 0 1 auto;
+        max-width: 50%;
+        display: inline-block;
+        a {
+          font-size: 1.1em;
+          font-weight: 600;
+          text-decoration: none;
+          @include link();
+          i:before {
+            font-size: 1.1em;
+            color: $basic-black-font-color;
+          }
+          &:hover {
+            i:before {
+              color: $basic-link-color;
+            }
+          }
+
+        }
+      }
+      li.prev {
+        text-align: left;
+      }
+      li.next {
+        text-align: right;
+      }
+    }
+  }
+}

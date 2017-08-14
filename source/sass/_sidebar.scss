@@ -1,0 +1,309 @@
+@import "variable";
+@import "mixin";
+// @import "widgets";
+
+// @media(max-width: 768px) {
+//   .cube-sidebar {
+//     display: none;
+//   }
+// }
+
+@media(min-width: 768px) {
+  .cube-sidebar {
+    width: 100%;
+    background: #fff;
+    @include block-shadow;
+    text-align: center;
+    border-radius: 5px;
+    max-width: 100%;
+    margin-top: 0;
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+    &:hover {
+      box-shadow:
+              0 6px 6px 0 rgba(0,0,0,.14),
+              0 3px 1px -2px rgba(0,0,0,.2),
+              0 1px 5px 0 rgba(0,0,0,.12)
+    }
+  }
+
+  .title {
+    padding: 10px;
+    font-weight: 600;
+    font-size: 1.3em;
+    border-bottom: 1px solid #ddd;
+    a {
+      color: $archive-title-color;
+      text-decoration: none;
+      &:visited {
+        text-decoration: none;
+        color: $archive-title-color;
+      }
+    }
+  }
+
+  .cube-author {
+
+    span {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      color: $strong-font-color;
+      font-weight: 600;
+    }
+
+    a {
+      display: inline-block;
+      width: 80%;
+      color: $basic-black-font-color;
+      padding-bottom: 20px;
+      text-decoration: none;
+      word-break: break-all;
+      max-width: 80%;
+      &:visited {
+        color: $basic-black-font-color;
+        text-decoration: none;
+      }
+    }
+
+    div.count {
+      width: 80%;
+      display: flex;
+      margin-left: 10%;
+      a.count {
+        flex: 0 1 auto;
+        padding-bottom: 10px;
+        span {
+          display: block;
+          padding: 4px;
+          line-height: 40px;
+          border-radius: 50%;
+          font-size: 16px;
+          color: #fff;
+          height: 40px;
+          width: 40px;
+          margin: 0 auto;
+          margin-bottom: 3px;
+        }
+        &.articles span {
+          background-color: $articles-color;
+        }
+        &.tags span {
+          background-color: $tags-color;
+        }
+        &.categories span {
+          background-color: $categories-color;
+        }
+      }
+    }
+  }
+
+  .cube-tagcloud {
+
+  }
+
+  .cube-categories {
+
+  }
+
+  .cube-links, .cube-friend-links {
+    ul.list {
+      padding: 20px;
+      list-style: none;
+      text-align: justify;
+      margin-top: 0;
+    }
+    ul.list li {
+      max-width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      word-break: break-all;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+      line-height: 33px;
+      position: relative;
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      a {
+        font-size: 1.1em;
+        text-decoration: none;
+        color: $basic-black-font-color;
+        padding-left: 37px;
+        &:visited {
+          text-decoration: none;
+          color: $basic-black-font-color;
+        }
+        &:hover {
+          text-decoration: underline;
+          color: $title-font-color;
+        }
+      }
+    }
+  }
+
+  .cube-recent-posts {
+    ul.list {
+      padding: 20px;
+      list-style: none;
+      text-align: justify;
+      margin-top: 0;
+    }
+    ul.list li {
+      position: relative;
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+      .index {
+        flex: 0 1 30px;
+        font-size: .8em;
+        margin: 0;
+        & span {
+          width: 16px;
+          height: 16px;
+          display: inline-block;
+          padding: 4px;
+          text-align: center;
+          font-size: 1.1em;
+          line-height: 1.2em;
+          background-color: #b8c0cc;
+          color: white;
+          font-weight: 600;
+          border-radius: 3px;
+        }
+      }
+
+      .index.first {
+        & span {
+          background-color: #f25d8e;
+        }
+      }
+
+      .preview {
+        display: flex;
+
+        div.image {
+          flex: 0 1 80px;
+          max-width: 80px;
+          height: 60px;
+          overflow: hidden;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        div.info {
+          flex: 1;
+          padding-left: 5px;
+          .title {
+            border: 0;
+            margin-top: 0;
+            padding: 0;
+            line-height: 1.3em;
+            margin-bottom: 0;
+            font-size: 1em;
+            text-align: left;
+            height: 38px;
+            overflow: hidden;
+            & a {
+              color: $basic-black-font-color;
+              &:visited {
+                color: $basic-black-font-color;
+              }
+              &:hover {
+                color: $basic-link-color;
+              }
+            }
+            // TODO 添加省略号样式
+            &:after {
+            }
+          }
+
+          .date {
+            margin-bottom: 0;
+            font-size: .8em;
+            margin-top: 4px;
+            color: #999;
+            height: 18px;
+            line-height: 22px;
+          }
+        }
+      }
+
+      .normal {
+        display: flex;
+        .title {
+          flex: 1;
+          border: 0;
+          font-size: 1em;
+          margin: 0;
+          padding: 0;
+          text-align: left;
+          height: 24px;
+          line-height: 24px;
+          // TODO 待添加max-width
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          word-break: break-all;
+          & a {
+            color: $basic-black-font-color;
+            &:visited {
+              color: $basic-black-font-color;
+            }
+            &:hover {
+              color: $basic-link-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cube-search {
+    .search-container {
+      position: relative;
+      padding: 10px;
+    }
+    input.cube-search-input {
+      outline: none;
+      height: 2.5em;
+      border-radius: 5px;
+      border: 0;
+      // box-shadow: 0 0 2px #ddd;
+      width: 95%;
+      padding-left: 5%;
+      color: $basic-black-font-color;
+    }
+    i.cube-search-submit {
+      position: absolute;
+      right: 15px;
+      width: 2em;
+      top: 50%;
+      height: 2em;
+      margin-top: -1em;
+      &:before {
+        display: inline-block;
+        font-size: 1.2em;
+        padding-top: .3em;
+        padding-right: .3em;
+        color: $basic-black-font-color;
+      }
+    }
+  }
+
+  .cube-music {
+    .cube-player {
+      margin: 0;
+    }
+  }
+}
