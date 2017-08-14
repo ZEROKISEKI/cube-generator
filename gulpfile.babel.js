@@ -9,8 +9,15 @@ import childProcess from 'child_process'
 
     const tasks = requireDir('./gulp')
 
+    gulp.task('debug', ['inject', 'assets', 'config'], () => {
+        gulp.start('package')
+        return gulp.src('./cube/**/*.*')
+            .pipe(gulp.dest('../cube'))
+    })
+
     gulp.task('build', ['inject', 'assets', 'config'], () => {
         gulp.start('package')
+        del.sync(['./cube/source/js/script.js.map'])
         return gulp.src('./cube/**/*.*')
             .pipe(gulp.dest('../cube'))
     })
@@ -19,7 +26,7 @@ import childProcess from 'child_process'
         return del('./cube')
     })
 
-    gulp.task('default', ['build'], () => {
+    gulp.task('default', ['debug'], () => {
         gulp.start('clean')
     })
 
@@ -38,6 +45,10 @@ import childProcess from 'child_process'
             })
             // event.type === 'changed'
         })
+    })
+
+    gulp.task('deploy', ['clean'], () => {
+        gulp.start('build')
     })
 
 })()
