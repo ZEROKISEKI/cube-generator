@@ -207,6 +207,12 @@ div.cube-article {
 
     .cube-article-header {
       padding: 0 20px;
+      .cube-article-tags a {
+        color: $title-font-color;
+        &:visited {
+          color: $title-font-color;
+        }
+      }
     }
 
     .cube-article-content {
