@@ -35,6 +35,10 @@
 
 这个时候你只要执行`hexo s`可以直接在本地查看效果(子进程已经帮你清除Hexo缓存并重新生成public文件夹了)
 
+## 修改`_config.yml`
+
+该项目下的`_config.yml`即是生成主题的`_config.yml`, 相关配置可以写在这个`_config.yml`上面
+
 ## 修改markdown代码的主题风格
 
 [hexo-theme-cube](https://github.com/ZEROKISEKI/hexo-theme-cube)默认采用的是`vs2015`的风格, 如果你要切换代码主题风格, 可以在`gulp/config.js`上面进行修改
