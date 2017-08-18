@@ -3,29 +3,33 @@ import $ from 'jquery'
 (function () {
     'use strict';
 
-    const background = $('.cube-header-background')
-    const sideMenu = $('nav.cube-side-menu')
-    const scrollTop = $('a.scroll-to-top')
+    const clientWidth = $('body').width()
 
-    background.on('resize', async function () {
-        const height = $(this).height()
+    if (clientWidth > 768) {
+        const background = $('.cube-header-background')
+        const sideMenu = $('nav.cube-side-menu')
+        const scrollTop = $('a.scroll-to-top')
 
-        $(document).on('scroll', async function () {
-            if ($(this).scrollTop() > height + 200) {
-                // sideMenu.css('transform', 'scale(1)')
-                sideMenu.css('transform', 'rotateY(0deg)')
-            } else {
-                // sideMenu.css('transform', 'scale(0)')
-                sideMenu.css('transform', 'rotateY(-90deg)')
-            }
+        background.on('resize', async function () {
+            const height = $(this).height()
+
+            $(document).on('scroll', async function () {
+                if ($(this).scrollTop() > height + 200) {
+                    // sideMenu.css('transform', 'scale(1)')
+                    sideMenu.css('transform', 'rotateY(0deg)')
+                } else {
+                    // sideMenu.css('transform', 'scale(0)')
+                    sideMenu.css('transform', 'rotateY(-90deg)')
+                }
+            })
+
         })
 
-    })
-
-    scrollTop.on('click', function () {
-        $(document.body).animate({
-            scrollTop: '0'
-        }, 800)
-    })
+        scrollTop.on('click', function () {
+            $(document.body).animate({
+                scrollTop: '0'
+            }, 800)
+        })
+    }
 
 })()

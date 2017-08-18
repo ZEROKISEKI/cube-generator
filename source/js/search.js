@@ -3,39 +3,43 @@ import $ from 'jquery'
 (function () {
     'use strict';
 
-    const searchInput = $('#cube-search-input')
-    const searchForm = $('div.cube-search-form')
-    const closeButton = searchForm.find('.cube-close')
-    const searchResult = searchForm.find('.cube-search-result')
-    const formInput = searchForm.find('input.search-input')
+    const clientWidth = $('body').width()
 
-    if (searchInput) {
+    if (clientWidth > 768) {
+        const searchInput = $('#cube-search-input')
+        const searchForm = $('div.cube-search-form')
+        const closeButton = searchForm.find('.cube-close')
+        const searchResult = searchForm.find('.cube-search-result')
+        const formInput = searchForm.find('input.search-input')
 
-        $.getJSON(searchModule.JSONUrl, (json) => {
-            let result = [];
-            formInput.on('input', () => {
-                let val = formInput.val()
-                if (val) {
-                    result = getArticles(val, 'posts', json).concat(...getArticles(val, 'pages', json))
-                    displaySearchResult(result)
-                } else {
-                    // TODO 搜索者可能感兴趣的文章
-                    if (searchResult.find('.search-result-list')) {
-                        searchResult.find('.search-result-list').remove()
+        if (searchInput) {
+
+            $.getJSON(searchModule.JSONUrl, (json) => {
+                let result = [];
+                formInput.on('input', () => {
+                    let val = formInput.val()
+                    if (val) {
+                        result = getArticles(val, 'posts', json).concat(...getArticles(val, 'pages', json))
+                        displaySearchResult(result)
+                    } else {
+                        // TODO 搜索者可能感兴趣的文章
+                        if (searchResult.find('.search-result-list')) {
+                            searchResult.find('.search-result-list').remove()
+                        }
                     }
-                }
+                })
             })
-        })
 
-        searchInput.on('focus', function () {
-            this.blur()
-            searchForm.addClass('show')
-            formInput.focus()
-        })
+            searchInput.on('focus', function () {
+                this.blur()
+                searchForm.addClass('show')
+                formInput.focus()
+            })
 
-        closeButton.on('click', function () {
-            searchForm.removeClass('show')
-        })
+            closeButton.on('click', function () {
+                searchForm.removeClass('show')
+            })
+        }
     }
 
     function getArticles(val, type, json) {
