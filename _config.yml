@@ -137,6 +137,7 @@ music:
 # before using the comment
 # make use you know how to set the params
 comment:
+  # your disqus_shortname
   disqus:
   changyan:
     appid:
