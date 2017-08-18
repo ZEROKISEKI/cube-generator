@@ -22,7 +22,6 @@ import $ from 'jquery'
                     sideMenu.css('transform', 'rotateY(-90deg)')
                 }
             })
-
         })
 
         scrollTop.on('click', function () {
