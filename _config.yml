@@ -18,6 +18,9 @@ header:
 # to the path "source/images/background.png"
 
 background: http://cube-1252774894.cosgz.myqcloud.com/background.png
+width: 2000
+height: 1414
+
 # this variable is used to locate your background
 # you know, on different devices, it have different view even if you use the same
 # background, so it make your background display section instead of all the background
