@@ -5,7 +5,7 @@ import $ from 'jquery'
 
     const clientWidth = $('body').width()
 
-    const result = await loadImage()
+    await loadImage()
 
     const cubeTitle = await getDocument()
 
@@ -13,9 +13,7 @@ import $ from 'jquery'
     cubeTitle.text('')
     cubeTitle.parent().css('visibility', 'visible')
 
-    $(document).ready(async function () {
-        const result = await getTitle()
-    })
+    await getTitle()
 
     async function getTitle() {
         while(title.length > 0) {
