@@ -4,10 +4,12 @@ import $ from 'jquery'
 (function () {
     'use strict';
 
-    $(document).ready(async function () {
-        $('pre code').each(function (i, block) {
-            hljs.highlightBlock(block);
-        })
+    $('pre code').each(function (i, block) {
+        hljs.highlightBlock(block);
+    })
+
+    $('pre div').each(function (i, block) {
+        hljs.highlightBlock(block);
     })
 
 })();
