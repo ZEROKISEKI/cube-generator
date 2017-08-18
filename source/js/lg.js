@@ -15,7 +15,6 @@ import 'lightgallery.js'
         start() {
 
             // 注入加载图gif
-            // TODO 修改gif图不动的怪异现象
             $('.cube-loading').removeClass('out')
 
             let b = setInterval(() => {
@@ -44,7 +43,6 @@ import 'lightgallery.js'
 
         $('.gallery-item').each(function (i, entry) {
             entry.addEventListener('click',async function (event) {
-                console.log(event)
                 let loading = new Load()
                 if ($('.cube-loading.out').length > 0) {
                     // 加载开始
