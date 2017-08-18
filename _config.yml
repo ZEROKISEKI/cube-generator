@@ -1,43 +1,35 @@
 theme: cube
 
 # background display for mobile, not for pc
-# both required this title
 header:
   background: http://cube-1252774894.cosgz.myqcloud.com/background.png
+  # both pc and mobile required title(make it the same as your hexo site _config.yml's title)
   title: senrenbankaの部落格
+
 
 # background display for pc
 # you can use url or path relative
-# if your do not need the background, please assign it to false
-# notice! could not left it being empty
-
-# if you use path, for example:
-
-# background: background.png means that your
-# should place your image(called "background.png")
-# to the path "source/images/background.png"
-
+# `background: background.png` refers to the path "source/images/background.png"
 background: http://cube-1252774894.cosgz.myqcloud.com/background.png
+
+
+# the background image width and height (you can see your image file to get them)
 width: 2000
 height: 1414
 
+
 # this variable is used to locate your background
-# you know, on different devices, it have different view even if you use the same
-# background, so it make your background display section instead of all the background
 # for example, if you want to locate display your background from top
 # you just need to type it: position: 0
 position: 400
+
+
 # this variable is used to make the background header being fuzzy
-# if your do not need the filter blur on the top
-# please make it empty, it means that: blur:
-# if you do not understand it, then you can see my blog to find what mean it is
+# if your do not need the filter blur on the top, make it empty, it means that: `blur: `
 blur: 5
 
-# just let it `false`
-full: false
 
-# yeah, this avatar is just make your avatar rounded or not
-# if your want to have a rounded avatar, please make it true
+# yeah, it is just to make your avatar rounded(true) or not(false)
 avatar: true
 
 menu:
@@ -91,9 +83,6 @@ sidebar:
 # only path, refer to source/images
 friend_links: friend_links.jpg
 
-# basic sidebar widgets
-# you can change the order freely
-# if you want to add widget, you can develop base the cube-generator
 widgets:
 - search
 - author
@@ -111,9 +100,6 @@ search: true
 
 # supported by DIYgod awesome project APlayer, you can find more on https://github.com/MoePlayer/APlayer
 # and you can see the doc on https://aplayer.js.org/docs/#/
-# source: path or url(path to source/music) for example, music1.mp3 refer to source/music/music1.mp3
-# image: path or url(path to source/images/music) for example, music1.png refer to source/images/music/music1.png
-# lrc: path or url(path to source/lrc) for example, music1.lrc refer to source/lrc/music1.lrc
 
 # mode can be `random`, `single`, `circulation`(loop), `order`(no loop)
 # if you have the lrc file, make the `showlrc` true, else make it false
@@ -128,7 +114,7 @@ music_setting:
   maxHeight: 513px
 
 # if you use path, make sure your hexo _config.yml has set the correcting url
-# url: http://www.yoururl.com(notice it not allow to set it localhost or 127.0.0.1)
+# url: http://www.yoururl.com/path/to/.mp3 or .lrc or ...
 # you'd better place your music and image, lrc to another site, and use url instead of path
 # if you don't want to use this widget, just make that `music: `
 music:
@@ -157,7 +143,6 @@ comment:
     conf:
   youyan:
   # gitment: https://github.com/imsun/gitment
-  # blog: https://imsun.net/posts/gitment-introduction/
   # make sure you know how to set it
   gitment:
     owner:
