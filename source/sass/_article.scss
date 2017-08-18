@@ -7,6 +7,12 @@
   @include markdown-config;
 }
 
+.cube-gallery {
+  a.gallery-item:not(:first-child) {
+    display: none;
+  }
+}
+
 // 文章摘要
 div.cube-excerpt {
   .cube-excerpt-header {
@@ -150,7 +156,7 @@ div.cube-excerpt {
         }
         &:visited {
           text-decoration: none;
-          color: $basic-black-font-color;
+          color: $link-color;
         }
       }
     }
