@@ -15,12 +15,20 @@
 - 安装必要的模块
 
         npm install
+        
+- 在你的Hexo目录安装搜索支持模块(可选)
+      
+        npm install hexo-generator-json-content --save
+    
+    如果不想要安装搜索模块, 那么请在主题的`_config.yml`进行配置
+    
+        search: false
     
 - 通过gulp进行主题生成
 
         gulp watch
     
-- **gulp watch**执行到**clean**状态之后, 执行下列命令
+- `gulp watch`执行到`clean`状态之后, 执行下列命令
 
         hexo clean & hexo g
         hexo s
@@ -29,17 +37,24 @@
 
 ## 修改代码
 
+
 如果你之前跑了`gulp watch`, 那么如果你修改了source或者是languages或者layout里面的文件, 都会重新生成新的主题，你会在终端看到下面的输出
 
     请执行hexo s开启服务器查看效果   
 
 这个时候你只要执行`hexo s`可以直接在本地查看效果(子进程已经帮你清除Hexo缓存并重新生成public文件夹了)
 
+
+
 ## 修改`_config.yml`
 
-该项目下的`_config.yml`即是生成主题的`_config.yml`, 相关配置可以写在这个`_config.yml`上面
+
+该项目下的`_config.yml`即是生成主题的`_config.yml`, 相关配置可以写在这个`_config.yml`上面, `_config.yml`的配置说明见[hexo-theme-cube](https://github.com/ZEROKISEKI/hexo-theme-cube)
+
+
 
 ## 修改markdown代码的主题风格
+
 
 [hexo-theme-cube](https://github.com/ZEROKISEKI/hexo-theme-cube)默认采用的是`vs2015`的风格, 如果你要切换代码主题风格, 可以在`gulp/config.js`上面进行修改
 
@@ -53,10 +68,16 @@
 
 重新启动`gulp watch`(由于修改的是gulp目录下的文件, 监听是无效的, 如果之前有`gulp watch`的进程，kill掉后重新输入`gulp watch`), 按照上面的步骤重新生成主题
 
+
+
 ## 使用生成的主题
+
 
 运行`gulp deploy`生成主题, 将主题的source/js/script.js.map删除(如果有的话, gulp在build那里的代码没写好, 如果之前gulp watch生成了cube主题, 那么deploy之后map不会被删除, 要手动删除)
 
+
+
 ## 协议
+
 
 该项目基于MIT协议开源
