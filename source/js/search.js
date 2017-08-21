@@ -4,13 +4,13 @@ import $ from 'jquery'
     'use strict';
 
     const clientWidth = $('body').width()
+    const searchInput = $('#cube-search-input')
+    const searchForm = $('div.cube-search-form')
+    const closeButton = searchForm.find('.cube-close')
+    const searchResult = searchForm.find('.cube-search-result')
+    const formInput = searchForm.find('input.search-input')
 
     if (clientWidth > 768) {
-        const searchInput = $('#cube-search-input')
-        const searchForm = $('div.cube-search-form')
-        const closeButton = searchForm.find('.cube-close')
-        const searchResult = searchForm.find('.cube-search-result')
-        const formInput = searchForm.find('input.search-input')
 
         if (searchInput) {
 
