@@ -146,4 +146,45 @@
   hr {
 
   }
+
+  figure.highlight {
+    color: #ddd;
+    background: #272822;
+    margin: 1.6em 0;
+    padding: 1em 20px;
+    display: block;
+    overflow-x: auto;
+    & table, tbody, tfoot, thead, tr, th, td, pre, div {
+      padding: 0;
+      outline: 0;
+      border: 0;
+      margin: 0;
+      font-weight: inherit;
+      font-style: inherit;
+      font-family: inherit;
+      font-size: 100%;
+      vertical-align: baseline;
+    }
+    & td {
+      border: none;
+      padding: 10px 0;
+      &.gutter {
+        background: transparent;
+      }
+      &.code {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+    }
+    & caption, th, td {
+      text-align: left;
+      font-weight: normal;
+      vertical-align: baseline;
+    }
+    & div.line.hljs {
+      height: 1.6em;
+      line-height: 1.6em;
+      background-color: transparent;
+    }
+  }
 }
