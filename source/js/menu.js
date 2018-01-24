@@ -25,7 +25,7 @@ import $ from 'jquery'
         })
 
         scrollTop.on('click', function () {
-            $(document.body).animate({
+            $('body,html').animate({
                 scrollTop: '0'
             }, 800)
         })
